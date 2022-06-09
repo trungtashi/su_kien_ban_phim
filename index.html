@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sự kiện bàn phím</title>
+</head>
+<body>
+    <img id="nobita" src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png" style="position:absolute;left:0; top:0;" height="100px" width="80px"/>
+
+    <script>
+        let nobita = document.getElementById('nobita')
+        function goUp(){
+            nobita.style.top = parseInt(nobita.style.top) - 5 +'px'
+        }
+        function goDown(){
+            nobita.style.top = parseInt(nobita.style.top) + 5 +'px'
+        }
+        function goLeft(){
+            nobita.style.left = parseInt(nobita.style.left) - 5 +'px'
+        }
+        function goRight(){
+            nobita.style.left = parseInt(nobita.style.left) + 5 +'px'
+        }
+
+        function moveSelect(evt){
+            switch(evt.keyCode){
+                case 38:
+                    goUp()
+                    break
+                case 40: 
+                    goDown()
+                    break
+                case 37: 
+                    goLeft()
+                    break
+                case 39: 
+                    goRight()
+                    break
+            }
+        }
+        function doReady(){
+            window.addEventListener('keydown', moveSelect)
+        }
+        doReady()
+    </script>
+</body>
+</html>
